@@ -1,8 +1,5 @@
 import { Gender } from "@prisma/client";
 import { Account } from "./Account";
-import { Address } from "./Address";
-import { City } from "./City";
-import { Country } from "./Country";
 import { Language } from "./Language";
 import { Role } from "./Role";
 import { SystemService } from "./SystemService";
@@ -16,10 +13,10 @@ export type User = {
   lastName?: string;
   officialName?: string;
   phone?: string;
-  country?: Country;
-  city?: City;
-  nationality?: Country;
-  address?: Address;
+  country?: string;
+  city?: string;
+  nationality?: string;
+  address?: string;
   dob?: string;
   phoneLabel?: string;
   emailLabel?: string;
