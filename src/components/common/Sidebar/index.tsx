@@ -5,10 +5,16 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
-import { menuSelectedItem } from "../../../../pages/dashboard/superAdmin";
 import { MenuItem as MenuItemType } from "../../../types/MenuItem";
 import { menuItems as importedData } from "./data";
 import MenuItem from "./MenuItem";
+
+// create menuSelectedItem atom
+import { atom } from "recoil";
+export const menuSelectedItem = atom({
+  key: "menuSelectedItem",
+  default: "",
+});
 
 const Sidebar = ({
   className,
