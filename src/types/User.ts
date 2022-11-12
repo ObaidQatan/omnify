@@ -1,9 +1,3 @@
-import { Gender } from "@prisma/client";
-import { Account } from "./Account";
-import { Language } from "./Language";
-import { Role } from "./Role";
-import { SystemService } from "./SystemService";
-
 export type User = {
   id: string;
   username: string;
@@ -21,11 +15,10 @@ export type User = {
   phoneLabel?: string;
   emailLabel?: string;
   createdAt?: string;
-  accounts: Account[];
   prefix?: string;
   middleName?: string;
-  language?: Language;
-  gender?: Gender;
+  language?: string;
+  gender?: string;
   avatar?: string;
   accessToken?: string;
   status?: "approved" | "not-approved" | "blocked";
