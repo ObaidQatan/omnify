@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator dbml {
+  provider            = "prisma-dbml-generator"
+  output              = "../dbml"
+  projectName         = "Omnify"
+  projectDatabaseType = "PostgreSQL"
+  outputName          = "er.diagram.dbml"
+  projectNote         = "Omnify"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}

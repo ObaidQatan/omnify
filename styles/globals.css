@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Nunito;
+  src: url('../src/assets/fonts/Nunito/Nunito.ttf');
+}
+
+@font-face {
+  font-family: Cairo;
+  src: url('../src/assets/fonts/Cairo/Cairo.ttf');
+}
+
+@font-face {
+  font-family: Monteserrat;
+  src: url('../src/assets/fonts/Monteserrat/Monteserrat.ttf');
+}
+
+@font-face {
+  font-family: Monteserrat-Thin;
+  src: url('../src/assets/fonts/Monteserrat/Monteserrat-Thin.ttf');
+}
+
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Nunito, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  transition: 0.2s;
+  /* user-select: none; */
+  -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.61);
+  border-radius: 10px;
+}
+
+.clicked-menu-item {
+  box-shadow: 0 0 10px 0 #7367f0
+}
+
+.shadow-valley {
+  box-shadow: inset 0 0 15px 0 rgba(128, 128, 128, 0.212)
+}
+
+.shadow-mountain {
+  box-shadow: 0 0 10px 0 #7367f0
+}
+
+.simple-shadow {
+  box-shadow: 0 5px 5px 0 #7267f079
+}
