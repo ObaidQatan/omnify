@@ -1,7 +1,5 @@
 import createUserController from "../../../../src/controllers/user/createUserController";
 import { USER_IS_REQUIRED, SOMETHING_WENT_WRONG } from "../../../../src/errors";
-import authenticate from "../../../../src/middlewares/auth/authenticate";
-import checkRole from "../../../../src/middlewares/checkRole";
 import { Request } from "../../../../src/types/Request";
 import { Response } from "../../../../src/types/Response";
 

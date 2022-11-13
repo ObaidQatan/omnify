@@ -8,7 +8,9 @@ Project "Omnify" {
 }
 
 Table User {
-  id Int [pk, increment]
-  email String [unique, not null]
+  id String [pk]
+  email String
   name String
+  username String [unique, not null]
+  password String [not null]
 }
