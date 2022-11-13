@@ -25,7 +25,7 @@ const ImageUploader = ({
         className ? className : ""
       }`}
     >
-      <div className="wrapper flex flex-col items-center p-5 bg-white rounded-md shadow-lg shadow-gray-400 h-full max-h-[500px] w-full max-w-[800px]">
+      <div className="wrapper flex flex-col items-center p-5 bg-white rounded-md shadow-lg shadow-black h-full max-h-[500px] w-full max-w-[800px]">
         <div className="closer flex justify-start items-center w-full pb-5">
           <Burger
             opened={true}
@@ -59,7 +59,7 @@ const ImageUploader = ({
           )}
 
           <button
-            className="browse-btn rounded-md text-white bg-[#7367f0] px-5 py-2 text-lg"
+            className="browse-btn rounded-md text-white bg-red-500 px-5 py-2 text-lg"
             onClick={() => inputRef.current?.click()}
           >
             {startCase(tCommon(camelCase("browse image")))}
@@ -68,14 +68,14 @@ const ImageUploader = ({
           {file && (
             <button
               data-tip={startCase(tCommon(camelCase("save")))}
-              className="done-btn rounded-md text-[#7367f0] bg-white shadow-sm shadow-[#7367f0] px-5 py-2 my-2 text-sm hover:shadow-none hover:translate-y-1"
+              className="done-btn rounded-md text-red-500 bg-white shadow-sm shadow-red-500 px-5 py-2 my-2 text-sm hover:shadow-none hover:translate-y-1"
               onClick={() => {
                 fileSetter(file);
                 setShow(false);
               }}
             >
               {/** sd card icon */}
-              <SdCard size={20} color="#7367f0" />
+              <SdCard size={20} color="#ef4444" />
             </button>
           )}
         </div>

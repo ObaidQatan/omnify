@@ -2,6 +2,7 @@ import { USER_ALREADY_EXIST, SOMETHING_WENT_WRONG } from "../../errors";
 import { Request } from "../../types/Request";
 import { Response } from "../../types/Response";
 import prisma from "../../../db/connector";
+import encrypt from "../../util/encrypt";
 
 export default async function createUserController(
   req: Request,
@@ -24,7 +25,8 @@ export default async function createUserController(
 
     const createdUser = await prisma.user.create({
       data: {
-        ...req.body.user,
+        username: req.body.user.username as string,
+        password: encrypt(req.body.user.password as string),
       },
       include: {
         subscriptions: true,
