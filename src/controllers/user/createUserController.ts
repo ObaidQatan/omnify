@@ -3,6 +3,7 @@ import { Request } from "../../types/Request";
 import { Response } from "../../types/Response";
 import prisma from "../../../db/connector";
 import encrypt from "../../util/encrypt";
+import jwt from "jsonwebtoken";
 
 export default async function createUserController(
   req: Request,
@@ -33,10 +34,32 @@ export default async function createUserController(
       },
     });
 
-    return res.status(200).json({
-      user: createdUser,
-      message: "User created successfully",
-    });
+    try {
+      const accessToken = jwt.sign(
+        { ...createdUser, password: null },
+        process.env.NEXT_PUBLIC_JWT_SECRET as string,
+        {
+          expiresIn: "1d",
+        }
+      );
+
+      return res.status(200).json({
+        user: {
+          ...createdUser,
+          accessToken,
+        },
+        message: "User created successfully",
+      });
+    } catch (error) {
+      if (typeof error === "string") {
+        return res.status(501).send({ message: SOMETHING_WENT_WRONG, error });
+      } else {
+        return res.status(501).send({
+          message: SOMETHING_WENT_WRONG,
+          error: (error as { message: string })?.message,
+        });
+      }
+    }
   } catch (error) {
     if (typeof error === "string") {
       return res.json({ message: SOMETHING_WENT_WRONG, error });

@@ -1,10 +1,9 @@
 import { Subscription } from "./Subscription";
 
-export type User = {
+export type Bike = {
   id: string;
-  username: string;
-  password?: string | null;
-  email?: string;
   name?: string;
+  image?: string;
+  createdAt?: string;
   subscriptions?: Subscription[];
 };
