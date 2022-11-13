@@ -9,6 +9,7 @@ const Background_1 = ({ className }: { className?: string }) => {
         layout="fill"
         objectFit="cover"
         objectPosition="center"
+        quality={50}
       />
       <div className="absolute top-0 left-0 backdrop-blur-md h-full w-full"></div>
     </div>

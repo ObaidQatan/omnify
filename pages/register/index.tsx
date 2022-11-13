@@ -162,10 +162,7 @@ const Home: NextPage = () => {
 
       <div className="register bg-white shadow-md w-full max-w-[1100px] shadow-black rounded-md p-5 flex flex-col items-center">
         <div className="logo w-full flex justify-start items-center">
-          <Logo_White
-            className="rounded-full shadow shadow-gray-500"
-            size={80}
-          />
+          <Logo_White className="rounded-full shadow shadow-gray-500 h-[80px] w-[80px]" />
           <h1 className="text-gray-400 mx-5">
             {startCase(tCommon("register"))}
           </h1>
