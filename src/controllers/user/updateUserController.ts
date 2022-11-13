@@ -31,22 +31,6 @@ export default async function updateRoleController(
       data: {
         // update nationality if exists
         ...req.body.user,
-        nationality: req.body.user.nationality
-          ? {
-              connect: {
-                id: req.body.user.nationality.id,
-              },
-            }
-          : undefined,
-      },
-      include: {
-        gender: true,
-        nationality: true,
-        accounts: {
-          include: {
-            role: true,
-          },
-        },
       },
     });
 

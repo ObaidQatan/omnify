@@ -25,27 +25,6 @@ export default async function createUserController(
     const createdUser = await prisma.user.create({
       data: {
         ...req.body.user,
-        nationality: req.body.user.nationality
-          ? {
-              connect: {
-                id: req.body.user.nationality.id,
-              },
-            }
-          : undefined,
-        language: req.body.user.language
-          ? {
-              connect: {
-                id: req.body.user.language.id,
-              },
-            }
-          : undefined,
-        gender: req.body.user.gender
-          ? {
-              connect: {
-                id: req.body.user.gender.id,
-              },
-            }
-          : undefined,
       },
     });
 

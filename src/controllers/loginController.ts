@@ -21,17 +21,6 @@ export default async function loginController(req: Request, res: Response) {
       where: {
         username: req.body.username,
       },
-      include: {
-        gender: true,
-        language: true,
-        address: true,
-        nationality: true,
-        accounts: {
-          include: {
-            role: true,
-          },
-        },
-      },
     });
     console.log("After findUnique");
     // NOTE: this will target the username of a single user: Account which has a single role
