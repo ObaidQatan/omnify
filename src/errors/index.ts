@@ -18,11 +18,11 @@ export const ACTION_NOT_ALLOWED = "Action not allowed";
 export const ALL_FIELDS_ARE_REQUIRED = "All fields are required";
 export const PERMISSION_ALREADY_EXIST = "Permission already exist";
 export const PERMISSION_IS_REQUIRED = "Permission is required";
-export const RESTAURANTS_NOT_FOUND = "Restaurants not found";
+export const BIKES_NOT_FOUND = "Bike not found";
 export const LANGUAGES_NOT_FOUND = "Languages not found";
-export const RESTAURANT_ALREADY_EXIST = "Restaurant already exist";
-export const RESTAURANT_IS_REQUIRED = "Restaurant is required";
-export const RESTAURANT_NOT_FOUND = "Restaurant not found";
+export const BIKE_ALREADY_EXIST = "Bike already exist";
+export const BIKE_IS_REQUIRED = "Bike is required";
+export const BIKE_NOT_FOUND = "Bike not found";
 export const COUNTRIES_NOT_FOUND = "Countries not found";
 export const YOU_ARE_NOT_AUTHORIZED_TO_UPDATE_THIS_USER =
   "You are not authorized to update this user";
