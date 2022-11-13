@@ -43,6 +43,15 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+::selection {
+  background: #f65959;
+  color: white;
+}
+::-moz-selection {
+  background: #f65959;
+  color: white;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
   background-color: transparent;
