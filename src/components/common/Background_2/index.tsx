@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Background_2 = ({ className }: { className?: string }) => {
   return (
-    <div className={`background_1 ${className && className}`}>
+    <div className={`background_2 z-[-1] ${className && className}`}>
       <Image
         src="/img/other/bg (2).jpg"
         alt=""
@@ -10,6 +10,7 @@ const Background_2 = ({ className }: { className?: string }) => {
         objectFit="cover"
         objectPosition="center"
       />
+      <div className="absolute top-0 left-0 backdrop-blur-md h-full w-full"></div>
     </div>
   );
 };

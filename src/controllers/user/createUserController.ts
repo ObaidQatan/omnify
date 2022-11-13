@@ -26,6 +26,9 @@ export default async function createUserController(
       data: {
         ...req.body.user,
       },
+      include: {
+        subscriptions: true,
+      },
     });
 
     return res.status(200).json({

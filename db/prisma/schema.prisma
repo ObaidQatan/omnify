@@ -17,32 +17,32 @@ datasource db {
 }
 
 model User {
-  id           String         @id @default(uuid())
-  email        String?
-  name         String?
-  username     String         @unique
-  password     String
-  Subscription Subscription[]
+  id            String         @id @default(uuid())
+  email         String?
+  name          String?
+  username      String         @unique
+  password      String
+  subscriptions Subscription[]
 }
 
 model Bike {
-  id           String         @id @default(uuid())
-  name         String
-  image        String?
-  createdAt    DateTime       @default(now())
-  updatedAt    DateTime       @updatedAt
-  Subscription Subscription[]
+  id            String         @id @default(uuid())
+  name          String
+  image         String?
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  subscriptions Subscription[]
 }
 
 model Plan {
-  id           String         @id @default(uuid())
-  name         String
-  description  String?
-  costPerUnit  Float
-  type         PlanType
-  createdAt    DateTime       @default(now())
-  updatedAt    DateTime       @updatedAt
-  Subscription Subscription[]
+  id            String         @id @default(uuid())
+  name          String
+  description   String?
+  costPerUnit   Float
+  type          PlanType
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  subscriptions Subscription[]
 }
 
 model Subscription {

@@ -4,7 +4,7 @@ import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
-import Background_1 from "../../src/components/common/Background_1";
+import Background_2 from "../../src/components/common/Background_2";
 import { loadingState } from "../../src/components/common/Loading";
 import Logo_White from "../../src/components/common/Logo/White";
 
@@ -17,7 +17,7 @@ const Home: NextPage = () => {
 
   return (
     <div className="relative w-screen h-screen flex flex-col items-center justify-center">
-      <Background_1 className="" />
+      <Background_2 className="" />
 
       <div className="register bg-white shadow-md w-full max-w-[1100px] shadow-black rounded-md p-5 flex flex-col items-center">
         <div className="logo w-full flex justify-start items-center">
