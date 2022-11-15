@@ -1,3 +1,4 @@
+import { SimpleGrid } from "@mantine/core";
 import { showNotification } from "@mantine/notifications";
 import { camelCase, capitalize, startCase } from "lodash";
 import type { NextPage } from "next";
@@ -156,11 +157,11 @@ const Home: NextPage = () => {
   };
 
   return (
-    <div className="relative w-screen h-screen flex flex-col items-center justify-center">
+    <div className="relative w-screen h-screen flex flex-col items-center justify-center px-5">
       <Background_2 className="" />
       <Loading />
 
-      <div className="register bg-white shadow-md w-full max-w-[1100px] shadow-black rounded-md p-5 flex flex-col items-center">
+      <div className="register bg-white shadow-md w-full h-[500px] max-w-[1100px] overflow-y-auto shadow-black rounded-md p-5 flex flex-col items-center">
         <div className="logo w-full flex justify-start items-center">
           <Logo_White className="rounded-full shadow shadow-gray-500 h-[80px] w-[80px]" />
           <h1 className="text-gray-400 mx-5">
@@ -170,7 +171,11 @@ const Home: NextPage = () => {
 
         <hr className="my-5 w-full" />
 
-        <div className="container flex justify-center items-center w-full">
+        <SimpleGrid
+          className="container w-full"
+          cols={2}
+          breakpoints={[{ maxWidth: 700, cols: 1 }]}
+        >
           <div className="inputs flex flex-col items-start justify-start w-full flex-1">
             <input
               type="text"
@@ -251,7 +256,7 @@ const Home: NextPage = () => {
               {startCase(tCommon(camelCase("upload avatar")))}
             </h3>
           </div>
-        </div>
+        </SimpleGrid>
 
         <div className="buttons flex flex-col items-center justify-center w-full">
           <button

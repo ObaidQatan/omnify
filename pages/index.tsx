@@ -79,7 +79,7 @@ const Home: NextPage = () => {
   };
 
   return (
-    <div className="relative w-screen h-screen flex flex-col items-center justify-center">
+    <div className="relative w-screen h-screen flex flex-col items-center justify-center px-5">
       <Background_1 className="" />
       <Loading />
 

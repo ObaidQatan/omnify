@@ -43,7 +43,7 @@ const Profile = ({
   }, []);
 
   return (
-    <div className="profile w-screen h-screen flex flex-col items-center justify-center bg-gray-100">
+    <div className="profile w-screen h-screen flex flex-col items-center justify-center bg-gray-100 py-5">
       <div className="wrapper flex flex-col items-center justify-center w-[300px] h-full">
         <div className="profile-container w-full h-[500px] p-5 flex flex-col items-center justify-start bg-white shadow shadow-gray-400 rounded-md">
           {/** avatar then username */}
