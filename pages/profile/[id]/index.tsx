@@ -3,7 +3,10 @@ import { GetServerSideProps } from "next";
 import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
 import { Golf, Logout } from "tabler-icons-react";
+import { loadingState } from "../../../src/components/common/Loading";
 import { User } from "../../../src/types/User";
 
 const Profile = ({
@@ -15,6 +18,29 @@ const Profile = ({
 }) => {
   const router = useRouter();
   const { t: tCommon } = useTranslation("common");
+  const [loading, setLoading] = useRecoilState(loadingState);
+
+  const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch(
+      `https://xjhrfldvdasjxazqxgox.supabase.co/storage/v1/object/public/users-data/public/avatars/${user.id}.png`
+    )
+      .then((res) => {
+        console.log("Avatar file....", { res });
+        if (res.ok) {
+          setAvatarUrl(res.url);
+        } else {
+          setAvatarUrl(null);
+        }
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log("Error getting avatar file....", { err });
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <div className="profile w-screen h-screen flex flex-col items-center justify-center bg-gray-100">
@@ -22,9 +48,9 @@ const Profile = ({
         <div className="profile-container w-full h-[500px] p-5 flex flex-col items-center justify-start bg-white shadow shadow-gray-400 rounded-md">
           {/** avatar then username */}
           <div className="avatar-container flex items-center justify-center w-full mb-5 pb-5 border-b">
-            <div className="avatar relative w-20 h-20 rounded-full border-red-300 border-[3px] overflow-hidden">
+            <div className="avatar relative w-20 h-20 rounded-full border-red-300 bg-red-300 border-[3px] overflow-hidden">
               <Image
-                src={"/img/other/avatar.svg"}
+                src={avatarUrl || "/img/other/avatar.svg"}
                 alt="avatar"
                 layout="fill"
                 objectFit="fill"

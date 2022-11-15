@@ -1,8 +1,10 @@
 import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
 import { User } from "../../../types/User";
+import { loadingState } from "../Loading";
 import Menu from "./Menu";
 
 interface Props {
@@ -12,8 +14,30 @@ interface Props {
 const Header = (props: Props) => {
   const router = useRouter();
   const { t: tCommon } = useTranslation("common");
+  const [loading, setLoading] = useRecoilState(loadingState);
 
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch(
+      `https://xjhrfldvdasjxazqxgox.supabase.co/storage/v1/object/public/users-data/public/avatars/${props.user?.id}.png`
+    )
+      .then((res) => {
+        console.log("Avatar file....", { res });
+        if (res.ok) {
+          setAvatarUrl(res.url);
+        } else {
+          setAvatarUrl(null);
+        }
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log("Error getting avatar file....", { err });
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <div className="header flex flex-row w-full h-16 bg-white border-b border-gray-200">
@@ -46,7 +70,7 @@ const Header = (props: Props) => {
           }}
         >
           <Image
-            src="/img/other/avatar.svg"
+            src={avatarUrl || "/img/other/avatar.svg"}
             alt="Avatar"
             layout="fill"
             objectFit="fill"

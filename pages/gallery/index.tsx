@@ -81,7 +81,7 @@ const Gallery = ({
     <div className="gallery flex flex-col w-screen h-screen overflow-hidden bg-gray-50">
       <Loading />
       {/** Build header */}
-      <Header />
+      <Header user={user} />
     </div>
   );
 };
