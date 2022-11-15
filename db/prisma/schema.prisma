@@ -22,6 +22,7 @@ model User {
   name          String?
   username      String         @unique
   password      String
+  role          Role           @default(USER)
   subscriptions Subscription[]
 }
 
@@ -63,4 +64,9 @@ enum PlanType {
   DAILY
   MONTHLY
   YEARLY
+}
+
+enum Role {
+  USER
+  ADMIN
 }

@@ -4,6 +4,18 @@ const prisma = new PrismaClient();
 
 async function main() {
   // seed here
+  // remove all users
+  await prisma.user.deleteMany();
+  // create admin user
+  await prisma.user.create({
+    data: {
+      email: "admin@localhost",
+      password: encrypt("admin123"),
+      username: "admin",
+      role: "ADMIN",
+    },
+  });
+
   // remove all bikes
   await prisma.bike.deleteMany();
   // add many bikes

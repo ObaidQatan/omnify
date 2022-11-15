@@ -13,6 +13,7 @@ Table User {
   name String
   username String [unique, not null]
   password String [not null]
+  role Role [not null, default: 'USER']
   subscriptions Subscription [not null]
 }
 
@@ -54,6 +55,11 @@ Enum PlanType {
   DAILY
   MONTHLY
   YEARLY
+}
+
+Enum Role {
+  USER
+  ADMIN
 }
 
 Ref: Subscription.planId > Plan.id

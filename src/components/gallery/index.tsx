@@ -27,6 +27,7 @@ const Gallery = (props: Props) => {
         { maxWidth: 1200, cols: 3 },
         { maxWidth: 1800, cols: 4 },
       ]}
+      className={`p-5 flex-1 overflow-y-auto`}
     >
       {props.bikes.map((bike) => (
         <div
@@ -44,7 +45,9 @@ const Gallery = (props: Props) => {
               />
             </div>
           ) : (
-            <BikeImage />
+            <div className="image w-full m-2 rounded-md overflow-hidden">
+              <BikeImage />
+            </div>
           )}
         </div>
       ))}
