@@ -4,6 +4,8 @@ import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
+import Header from "../../src/components/common/Header";
+import Menu from "../../src/components/common/Header/Menu";
 import Loading, { loadingState } from "../../src/components/common/Loading";
 import { Bike } from "../../src/types/Bike";
 import { User } from "../../src/types/User";
@@ -76,9 +78,10 @@ const Gallery = ({
   }, []);
 
   return (
-    <div className="gallery flex w-screen h-screen overflow-hidden bg-gray-50">
+    <div className="gallery flex flex-col w-screen h-screen overflow-hidden bg-gray-50">
       <Loading />
-      <h1>{tCommon("bikes gallery")}</h1>
+      {/** Build header */}
+      <Header />
     </div>
   );
 };

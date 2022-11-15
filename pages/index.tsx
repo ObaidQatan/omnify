@@ -100,7 +100,7 @@ const Home: NextPage = () => {
             onChange={(e) => {
               setUsername(e.target?.value?.trim());
             }}
-            className="outline-none focus:outline-dashed text-red-500 font-[Nunito] focus:outline-red-500 my-2 p-5 bg-white rounded-md w-full shadow shadow-gray-400"
+            className="outline-none focus:outline-dashed text-red-500 font-[Nunito] focus:outline-red-500 my-2 p-5 bg-white rounded-md w-full shadow-inner shadow-gray-400"
           />
           <input
             type="password"
@@ -110,7 +110,7 @@ const Home: NextPage = () => {
             onChange={(e) => {
               setPassword(e.target?.value?.trim());
             }}
-            className="outline-none text-red-500 font-[Nunito] focus:outline-dashed focus:outline-red-500 my-2 p-5 bg-white rounded-md w-full shadow shadow-gray-400"
+            className="outline-none text-red-500 font-[Nunito] focus:outline-dashed focus:outline-red-500 my-2 p-5 bg-white rounded-md w-full shadow-inner shadow-gray-400"
           />
         </div>
 
