@@ -36,9 +36,9 @@ const Gallery = (props: Props) => {
           onClick={() => router.push(`/gallery/bike/${bike.id}`)}
         >
           {bike.image ? (
-            <div className="image w-full m-2 rounded-md overflow-hidden relative">
+            <div className="img h-[200px] w-[200px] max-h-full max-w-full relative ">
               <Image
-                src="/img/other.bike.svg"
+                src={bike.image}
                 alt="Bike"
                 layout="fill"
                 objectFit="fill"

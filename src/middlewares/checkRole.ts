@@ -1,39 +1,33 @@
-// import { ACTION_NOT_ALLOWED, ROLE_IS_REQUIRED } from "../errors";
-// import { Account } from "../types/Account";
-// import { Request } from "../types/Request";
-// import { Response } from "../types/Response";
-// import { User } from "../types/User";
+import { lowerCase } from "lodash";
+import { ACTION_NOT_ALLOWED, ROLE_IS_REQUIRED } from "../errors";
+import { Request } from "../types/Request";
+import { Response } from "../types/Response";
+import { User } from "../types/User";
 
-// export default function checkRole(
-//   role_id: number,
-//   req: Request,
-//   res: Response,
-//   next?: any
-// ) {
-//   const role = (req.user as User)?.accounts.find(
-//     (account: Account) => account.role.role_id === role_id
-//   )?.role;
-//   console.log("Role from request", req.user.accounts);
+export default function checkRole(
+  role: string,
+  req: Request,
+  res: Response,
+  next?: any
+) {
+  console.log("Role from request", req.user?.role);
 
-//   if (!role) {
-//     res.statusCode = 400;
-//     throw ROLE_IS_REQUIRED;
-//   }
+  if (!role) {
+    res.statusCode = 400;
+    throw ROLE_IS_REQUIRED;
+  }
 
-//   console.log("==================================================");
-//   console.log({ role_id, roleId: role.role_id });
+  console.log("==================================================");
 
-//   if (role.role_id !== role_id) {
-//     res.statusCode = 403;
-//     console.log("Role not valid block");
-//     console.log({
-//       role_id,
-//       role,
-//     });
-//     throw ACTION_NOT_ALLOWED;
-//   }
+  if (lowerCase(role) !== lowerCase(req.user?.role)) {
+    res.statusCode = 403;
+    console.log("Role not valid block");
+    console.log({
+      role,
+      userRole: req.user?.role,
+    });
+    throw ACTION_NOT_ALLOWED;
+  }
 
-//   typeof next === "function" && next(req, res);
-// }
-
-export {};
+  typeof next === "function" && next(req, res);
+}

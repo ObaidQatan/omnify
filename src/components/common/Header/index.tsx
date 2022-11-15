@@ -61,7 +61,7 @@ const Header = (props: Props) => {
       </div>
 
       {/** Build avatar and menu show up on hover */}
-      <div className="avatar-container relative flex flex-1 items-center justify-end h-full px-5">
+      <div className="avatar-container relative flex flex-1 items-center justify-end h-full p-5">
         <div
           className="avatar cursor-pointer flex relative flex-row items-center justify-center overflow-hidden border border-red-300 w-10 h-10 bg-gray-100 rounded-full"
           onClick={() => {
@@ -77,6 +77,7 @@ const Header = (props: Props) => {
           />
         </div>
         <Menu
+          user={props.user}
           opened={menuOpen}
           className="absolute top-16 right-0 z-10 shadow"
         />

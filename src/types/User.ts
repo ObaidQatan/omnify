@@ -7,4 +7,5 @@ export type User = {
   email?: string;
   name?: string;
   subscriptions?: Subscription[];
+  role?: "ADMIN" | "USER";
 };
