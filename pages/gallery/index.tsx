@@ -7,10 +7,11 @@ import { useRecoilState } from "recoil";
 import Header from "../../src/components/common/Header";
 import Menu from "../../src/components/common/Header/Menu";
 import Loading, { loadingState } from "../../src/components/common/Loading";
+import Gallery from "../../src/components/gallery";
 import { Bike } from "../../src/types/Bike";
 import { User } from "../../src/types/User";
 
-const Gallery = ({
+const GalleryPage = ({
   accessToken,
   user,
 }: {
@@ -82,6 +83,7 @@ const Gallery = ({
       <Loading />
       {/** Build header */}
       <Header user={user} />
+      <Gallery bikes={bikes} />
     </div>
   );
 };
@@ -151,4 +153,4 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 };
 
-export default Gallery;
+export default GalleryPage;

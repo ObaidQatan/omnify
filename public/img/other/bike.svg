@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="id_svgCanvas" x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve" preserveAspectRatio="none">
+
+<g>
+	<defs>
+		<path id="573570693_SVGID_1_" d="M48.623,27.346c-3.052,1.475-2.996,1.372-5.623-0.143l-8.225-4.749C33.067,21.469,31.203,21,29.363,21    c-3.75,0-7.396,1.945-9.405,5.426l-1.718,2.935L23.804,39c1.786,3.094,5.087,5,8.66,5h12.417l1.223-2.118    C47.611,39.27,52.399,25.52,48.623,27.346z"></path>
+	</defs>
+	<use xlink:href="#573570693_SVGID_1_" class="stshockcolor" style="fill: rgb(228, 118, 112); overflow: visible;" data-st="fill:#9487A3;;overflow:visible;"></use>
+	<clipPath id="573570693_SVGID_2_">
+		<use xlink:href="#573570693_SVGID_1_" style="overflow:visible;"></use>
+	</clipPath>
+	<g class="st3" style="clip-path:url(#573570693_SVGID_2_);;">
+		<rect x="17" y="32" class="st0 st9" width="36" height="12" style="opacity:0.5;;fill:#47475E;;"></rect>
+		<g>
+			<rect x="18" y="21" class="st2" width="34" height="23" style="opacity:0.1;fill:#7D1CC7;;"></rect>
+			<rect x="18" y="21" class="st8" width="34" height="23" style="opacity:0.2;;"></rect>
+		</g>
+	</g>
+</g>
+<path class="stshockcolor" d="M50.042,34.872l10.201,1.545l3.756-6.505C61.56,27.495,58.205,26,54.5,26c-5.002,0-9.368,2.721-11.701,6.762  C41.654,34.745,36.311,44,36.311,44h11.377L50.042,34.872z" style="fill: rgb(228, 118, 112);" data-st="fill:#9487A3;;"></path>
+<g>
+	<defs>
+		<path id="573570693_SVGID_3_" d="M54.5,32c-5.248,0-9.5,4.252-9.5,9.5s4.252,9.5,9.5,9.5s9.5-4.252,9.5-9.5S59.748,32,54.5,32z M60,41.5    c0,3.036-2.462,5.5-5.5,5.5S49,44.536,49,41.5s2.462-5.5,5.5-5.5S60,38.464,60,41.5z M9.5,32C4.252,32,0,36.252,0,41.5    S4.252,51,9.5,51s9.5-4.252,9.5-9.5S14.748,32,9.5,32z M15,41.5c0,3.036-2.462,5.5-5.5,5.5S4,44.536,4,41.5S6.462,36,9.5,36    S15,38.464,15,41.5z"></path>
+	</defs>
+	<use xlink:href="#573570693_SVGID_3_" class="st0" style="fill:#47475E;;overflow:visible;"></use>
+	<clipPath id="573570693_SVGID_4_">
+		<use xlink:href="#573570693_SVGID_3_" style="overflow:visible;"></use>
+	</clipPath>
+	<g class="st4" style="clip-path:url(#573570693_SVGID_4_);;">
+		<polygon class="st1" points="13.394,32 0,32 0,51 2.425,51   " style="opacity:0.15;fill:#FFFFFF;;"></polygon>
+		<polygon class="st1" points="64,32 62.794,32 51.824,51 64,51   " style="opacity:0.15;fill:#FFFFFF;;"></polygon>
+	</g>
+</g>
+<g>
+	<defs>
+		<path id="573570693_SVGID_5_" d="M19.24,25.094l6.83,11.83C26.856,38.285,28.935,40,32.464,40h31.415l-2.359,4H32.464    c-3.573,0-6.874-1.906-8.66-5l-6.296-10.907L19.24,25.094z"></path>
+	</defs>
+	<use xlink:href="#573570693_SVGID_5_" class="st11" style="fill:#A6A69F;;overflow:visible;"></use>
+	<clipPath id="573570693_SVGID_6_">
+		<use xlink:href="#573570693_SVGID_5_" style="overflow:visible;"></use>
+	</clipPath>
+	<g class="st5" style="clip-path:url(#573570693_SVGID_6_);;">
+		<polygon class="st10" points="15.508,24.094 47.803,24.094 36.311,44 15.508,44   " style="opacity:0.3;fill:#231F20;;"></polygon>
+	</g>
+</g>
+<path class="stshockcolor" d="M11,21c0,0,1.411,0,3.62,0c1.48,0,2.772,0.804,3.464,1.999C18.425,23.587,19.24,25,19.24,25  s-0.814,1.41-1.153,1.998C17.395,28.194,16.102,29,14.62,29C12.411,29,11,29,11,29V21z" style="fill: rgb(228, 118, 112);" data-st="fill:#9487A3;;"></path>
+<g>
+	<defs>
+		<path id="573570693_SVGID_7_" d="M9.499,43c-0.254,0-0.512-0.064-0.749-0.201c-0.717-0.414-0.963-1.331-0.549-2.049l12.263-21.242    C22.816,15.443,24.552,14,29.613,14h2.742c0.829,0,1.5,0.671,1.5,1.5s-0.672,1.5-1.5,1.5h-2.742c-3.841,0-4.671,0.76-6.551,4.009    L10.799,42.25C10.521,42.731,10.017,43,9.499,43z"></path>
+	</defs>
+	<use xlink:href="#573570693_SVGID_7_" class="st11" style="fill:#A6A69F;;overflow:visible;"></use>
+	<clipPath id="573570693_SVGID_8_">
+		<use xlink:href="#573570693_SVGID_7_" style="overflow:visible;"></use>
+	</clipPath>
+	<g class="st6" style="clip-path:url(#573570693_SVGID_8_);;">
+		<path class="st0" d="M35.242,17H28.5c-0.829,0-1.5-0.671-1.5-1.5s0.672-1.5,1.5-1.5h6.743L35.242,17z" style="fill:#47475E;;"></path>
+	</g>
+</g>
+</svg>
