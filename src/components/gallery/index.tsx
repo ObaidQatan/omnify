@@ -1,4 +1,5 @@
-import { SimpleGrid } from "@mantine/core";
+import { Button, SimpleGrid } from "@mantine/core";
+import { startCase } from "lodash";
 import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -33,8 +34,8 @@ const Gallery = (props: Props) => {
         <div
           key={bike.id}
           className={`bg-white p-5 rounded-md shadow shadow-gray-400 flex flex-col items-center justify-start`}
-          onClick={() => router.push(`/gallery/bike/${bike.id}`)}
         >
+          {/* =============== Image ============= */}
           {bike.image ? (
             <div className="img h-[200px] w-[200px] max-h-full max-w-full relative ">
               <Image
@@ -49,6 +50,31 @@ const Gallery = (props: Props) => {
               <BikeImage />
             </div>
           )}
+          {/* ==================================== */}
+
+          {/* =============== Name ============= */}
+          <div className="name text-start text-lg font-semibold text-gray-700 mt-2 px-2 w-full border-b">
+            {bike.name}
+          </div>
+          {/* ==================================== */}
+
+          {/* =============== View Button ============= */}
+          <div className="view-button mt-2 w-full text-end">
+            <Button
+              className="btn w-full"
+              onClick={() => router.push(`/gallery/bike/${bike.id}`)}
+            >
+              <h4
+                className="tracking-wider"
+                style={{
+                  fontSize: "12px",
+                  fontWeight: "normal",
+                }}
+              >
+                {startCase(tCommon("view"))}
+              </h4>
+            </Button>
+          </div>
         </div>
       ))}
     </SimpleGrid>

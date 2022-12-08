@@ -18,6 +18,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/server": "^11.10.0",
+    "@headlessui/react": "^1.7.4",
     "@mantine/core": "^5.1.5",
     "@mantine/dates": "^5.1.5",
     "@mantine/dropzone": "^5.1.5",
@@ -33,6 +34,7 @@
     "bcrypt": "^5.0.1",
     "dayjs": "^1.11.5",
     "dotenv": "^16.0.1",
+    "framer-motion": "^7.6.18",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "next": "12.3.1",

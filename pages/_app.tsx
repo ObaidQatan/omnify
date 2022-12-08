@@ -57,11 +57,25 @@ function MyApp({ Component, pageProps }: AppProps) {
           withNormalizeCSS
           emotionCache={rtlCache}
           theme={{
-            dir: isAR ? "rtl" : "ltr",
-            colorScheme,
+            dir: lang === "ar" ? "rtl" : "ltr",
             defaultRadius: 5,
-            fontFamily: isAR ? "Cairo" : "Nunito",
-            primaryColor: "cyan",
+            colorScheme,
+            fontFamily: lang === "ar" ? "Cairo" : "Nunito",
+            colors: {
+              "primary-start": [
+                "#ef4444",
+                "#ef4444",
+                "#ef4444",
+                "#ef4444",
+                "#ef4444",
+                "#ef4444",
+                "#ef4444",
+                "#d83e3e",
+                "#d83e3e",
+                "#ef4444",
+              ],
+            },
+            primaryColor: "primary-start",
           }}
         >
           <ModalsProvider>

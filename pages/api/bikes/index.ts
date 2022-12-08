@@ -7,7 +7,7 @@ import { Response } from "../../../src/types/Response";
 export default async function bikes(req: Request, res: Response) {
   try {
     // TODO: Check if accessToken is valid
-    authenticate(req, res);
+    // authenticate(req, res);
     // TODO: Check if user is super admin
     console.log("Bikes Api");
   } catch (error) {

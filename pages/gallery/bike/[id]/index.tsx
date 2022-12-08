@@ -1,33 +1,33 @@
 import { showNotification } from "@mantine/notifications";
 import { GetServerSideProps } from "next";
 import useTranslation from "next-translate/useTranslation";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
-import Header from "../../src/components/common/Header";
-import Menu from "../../src/components/common/Header/Menu";
-import Loading, { loadingState } from "../../src/components/common/Loading";
-import Gallery from "../../src/components/gallery";
-import { Bike } from "../../src/types/Bike";
-import { User } from "../../src/types/User";
+import { loadingState } from "../../../../src/components/common/Loading";
+import BikeImage from "../../../../src/components/gallery/BikeImage";
+import { Bike } from "../../../../src/types/Bike";
+import { User } from "../../../../src/types/User";
 
-const GalleryPage = ({
+const Bike = ({
   accessToken,
   user,
+  id,
 }: {
   accessToken: string;
   user: User;
+  id: string;
 }) => {
   const router = useRouter();
   const { t: tCommon } = useTranslation("common");
-  const [_, setLoading] = useRecoilState(loadingState);
-
-  const [bikes, setBikes] = useState<Bike[]>([]);
+  const [loading, setLoading] = useRecoilState(loadingState);
+  const [bike, setBike] = useState<Bike | undefined>();
 
   useEffect(() => {
     setLoading(true);
 
-    fetch(`${process.env.NEXT_PUBLIC_SERVER_URL as string}/api/bikes`, {
+    fetch(`${process.env.NEXT_PUBLIC_SERVER_URL as string}/api/bikes/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -39,7 +39,7 @@ const GalleryPage = ({
 
           return showNotification({
             title: "Error",
-            message: "Error updating bikes",
+            message: "Error updating bike",
             color: "red",
           });
         }
@@ -62,8 +62,8 @@ const GalleryPage = ({
             });
 
             setLoading(false);
-            console.log({ bikes: data.bikes });
-            return setBikes(data.bikes);
+            console.log({ bike: data.bike });
+            return setBike(data.bike);
           }
         });
       })
@@ -79,10 +79,21 @@ const GalleryPage = ({
   }, []);
 
   return (
-    <div className="gallery flex flex-col w-screen h-screen overflow-hidden bg-gray-50">
-      <Loading />
-      <Header user={user} />
-      <Gallery bikes={bikes} />
+    <div className="profile w-screen h-screen flex flex-col items-center justify-center bg-gray-100 py-5">
+      <div className="wrapper bg-white flex flex-col items-center justify-start w-full max-w-[800px] h-full shadow-md shadow-[#00000050] rounded-lg p-5">
+        {bike?.image ? (
+          <div className="img h-[200px] w-[200px] max-h-full max-w-full relative ">
+            <Image src={bike.image} alt="Bike" layout="fill" objectFit="fill" />
+          </div>
+        ) : (
+          <div className="image w-full m-2 rounded-md overflow-hidden">
+            <BikeImage />
+          </div>
+        )}
+        <div className="name text-center text-lg font-semibold text-gray-700 mt-2 px-2 w-full border-b">
+          {bike?.name}
+        </div>
+      </div>
     </div>
   );
 };
@@ -97,6 +108,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         props: {
           accessToken: null,
           user: null,
+          id: context.params?.id,
         },
       };
     }
@@ -130,6 +142,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         props: {
           accessToken,
           user: data.user,
+          id: context.params?.id,
         },
       };
     }
@@ -138,6 +151,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       props: {
         accessToken,
         user: null,
+        id: context.params?.id,
       },
     };
   } catch (error) {
@@ -152,4 +166,4 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 };
 
-export default GalleryPage;
+export default Bike;
