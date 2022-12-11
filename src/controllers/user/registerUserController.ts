@@ -39,6 +39,14 @@ export default async function registerRoleController(
         username: req.body.user.username as string,
         password: encrypt(req.body.user.password as string),
       },
+      include: {
+        subscriptions: {
+          include: {
+            bike: true,
+            plan: true,
+          },
+        },
+      },
     });
 
     try {

@@ -11,7 +11,12 @@ export default async function bikeController(req: Request, res: Response) {
         id: req.query.id as string,
       },
       include: {
-        subscriptions: true,
+        subscriptions: {
+          include: {
+            bike: true,
+            plan: true,
+          },
+        },
       },
     });
 

@@ -1,12 +1,12 @@
-import { BIKES_NOT_FOUND, SOMETHING_WENT_WRONG } from "../errors";
+import { PLANS_NOT_FOUND, SOMETHING_WENT_WRONG } from "../errors";
 import { Request } from "../types/Request";
 import { Response } from "../types/Response";
 import prisma from "../../db/connector";
 
-export default async function bikesController(req: Request, res: Response) {
+export default async function plansController(req: Request, res: Response) {
   try {
-    // TODO: Get all bikes from the database
-    const bikes = await prisma.bike.findMany({
+    // TODO: Get all plans from the database
+    const plans = await prisma.plan.findMany({
       include: {
         subscriptions: {
           include: {
@@ -20,13 +20,13 @@ export default async function bikesController(req: Request, res: Response) {
       },
     });
 
-    if (!bikes) {
-      throw BIKES_NOT_FOUND;
+    if (!plans) {
+      throw PLANS_NOT_FOUND;
     }
 
     return res.json({
-      message: "Bikes fetched successfully",
-      bikes,
+      message: "plans fetched successfully",
+      plans,
     });
   } catch (error) {
     if (typeof error === "string") {

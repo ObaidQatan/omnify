@@ -30,7 +30,12 @@ export default async function createUserController(
         password: encrypt(req.body.user.password as string),
       },
       include: {
-        subscriptions: true,
+        subscriptions: {
+          include: {
+            bike: true,
+            plan: true,
+          },
+        },
       },
     });
 

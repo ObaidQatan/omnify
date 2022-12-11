@@ -21,7 +21,12 @@ export default async function createBikeController(
         image: req.body.bike.image,
       },
       include: {
-        subscriptions: true,
+        subscriptions: {
+          include: {
+            bike: true,
+            plan: true,
+          },
+        },
       },
     });
 

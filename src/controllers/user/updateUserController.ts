@@ -32,6 +32,14 @@ export default async function updateRoleController(
         // update nationality if exists
         ...req.body.user,
       },
+      include: {
+        subscriptions: {
+          include: {
+            bike: true,
+            plan: true,
+          },
+        },
+      },
     });
 
     try {

@@ -1780,10 +1780,10 @@
   "resolved" "https://registry.npmjs.org/date-fns/-/date-fns-2.29.3.tgz"
   "version" "2.29.3"
 
-"dayjs@^1.11.5", "dayjs@>=1.0.0":
-  "integrity" "sha512-CAdX5Q3YW3Gclyo5Vpqkgpj8fSdLQcRuzfX6mC6Phy0nfJ0eGYOeS7m4mt2plDWLAtA4TqTakvbboHvUxfe4iA=="
-  "resolved" "https://registry.npmjs.org/dayjs/-/dayjs-1.11.5.tgz"
-  "version" "1.11.5"
+"dayjs@^1.11.7", "dayjs@>=1.0.0":
+  "integrity" "sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ=="
+  "resolved" "https://registry.npmjs.org/dayjs/-/dayjs-1.11.7.tgz"
+  "version" "1.11.7"
 
 "debug@^2.2.0":
   "integrity" "sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA=="

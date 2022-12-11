@@ -32,3 +32,7 @@ export const USER_ALREADY_EXIST = "User already exist";
 export const USERNAME_IS_ALREADY_TAKEN = "Username is already taken";
 export const PASSWORDS_DO_NOT_MATCH = "Passwords do not match";
 export const CITIES_NOT_FOUND = "Cities not found";
+export const PLANS_NOT_FOUND = "Plans not found";
+export const SUBSCRIPTIONS_NOT_FOUND = "Subscriptions not found";
+export const SUBSCRIPTION_ALREADY_EXIST = "Subscription already exist";
+export const SUBSCRIPTION_IS_REQUIRED = "Subscription is required";

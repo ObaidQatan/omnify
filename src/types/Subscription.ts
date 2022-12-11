@@ -9,5 +9,8 @@ export type Subscription = {
   createdAt?: string;
   user?: User;
   bike?: Bike;
+  bikeId?: string;
+  userId?: string;
+  planId?: string;
   plan?: Plan;
 };
