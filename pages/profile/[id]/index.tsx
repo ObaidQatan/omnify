@@ -47,8 +47,8 @@ const Profile = ({
   }, []);
 
   return (
-    <div className="profile w-screen h-screen flex items-center justify-center bg-gray-100 py-5">
-      <div className="wrapper flex flex-col items-center justify-center w-[300px] mx-5 h-full">
+    <div className="profile w-screen h-screen overflow-x-hidden overflow-y-auto flex flex-col md:flex-row items-center justify-start bg-gray-100 py-5">
+      <div className="wrapper flex flex-col items-center justify-center md:w-[300px] w-[calc(100%-20px)] mx-5 h-full">
         <div className="profile-container w-full h-[500px] p-5 flex flex-col items-center justify-start bg-white shadow shadow-gray-400 rounded-md">
           {/** avatar then username */}
           <div className="avatar-container flex items-center justify-center w-full mb-5 pb-5 border-b">
@@ -100,7 +100,7 @@ const Profile = ({
           <h3 className="px-5">{startCase(tCommon(camelCase("logout")))}</h3>
         </button>
       </div>
-      <div className="subs flex-1 h-full max-h-[670px] m-5 p-5 flex flex-col items-center justify-start bg-white shadow shadow-gray-400 rounded-md">
+      <div className="subs md:flex-1 w-[calc(100%-20px)] h-full max-h-[670px] m-5 p-5 flex flex-col items-center justify-start bg-white shadow shadow-gray-400 rounded-md">
         {!user?.subscriptions || user?.subscriptions?.length === 0 ? (
           <div className="msg w-full h-full flex justify-center items-center">
             <h3>
@@ -120,7 +120,7 @@ const Profile = ({
               { maxWidth: 768, cols: 1 },
               { maxWidth: 1024, cols: 2 },
             ]}
-            className="subs-grid w-full h-full"
+            className="subs-grid w-full h-full overflow-y-auto"
           >
             {user?.subscriptions?.map((sub) => (
               <div

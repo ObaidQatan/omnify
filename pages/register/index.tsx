@@ -90,11 +90,11 @@ const Home: NextPage = () => {
 
           if (avatarFile) {
             uploadAvatar(data.user.id).then(() => {
-              document.cookie = `next-auth.session-token=${data.user.accessToken};`;
+              document.cookie = `next-auth.session-token=${data.user.accessToken}; path=/;`;
               router.push("/gallery");
             });
           } else {
-            document.cookie = `next-auth.session-token=${data.user.accessToken};`;
+            document.cookie = `next-auth.session-token=${data.user.accessToken}; path=/;`;
             router.push("/gallery");
           }
         });

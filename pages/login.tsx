@@ -50,7 +50,7 @@ const Home: NextPage = () => {
       });
 
       // TODO: Store access token in cookie
-      document.cookie = `next-auth.session-token=${data.user.accessToken};`;
+      document.cookie = `next-auth.session-token=${data.user.accessToken}; path=/;`;
       // TODO: redirect to dashboard
       router.push("/gallery");
     } catch (error) {
