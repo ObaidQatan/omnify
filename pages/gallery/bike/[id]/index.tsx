@@ -169,7 +169,7 @@ const Bike = ({
       .then((res) => {
         if (!res.ok) {
           setLoading(false);
-
+          console.log({ res });
           return showNotification({
             title: "Error",
             message: "Something went wrong while subscribing",

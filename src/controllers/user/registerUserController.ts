@@ -41,6 +41,11 @@ export default async function registerRoleController(
       },
       include: {
         subscriptions: {
+          where: {
+            endDate: {
+              gte: new Date().toISOString(),
+            },
+          },
           include: {
             bike: true,
             plan: true,

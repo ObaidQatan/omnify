@@ -31,6 +31,11 @@ export default async function createUserController(
       },
       include: {
         subscriptions: {
+          where: {
+            endDate: {
+              gte: new Date().toISOString(),
+            },
+          },
           include: {
             bike: true,
             plan: true,

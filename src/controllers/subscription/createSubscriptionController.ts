@@ -2,6 +2,7 @@ import { SOMETHING_WENT_WRONG } from "../../errors";
 import { Request } from "../../types/Request";
 import { Response } from "../../types/Response";
 import prisma from "../../../db/connector";
+import { parseInt, toString } from "lodash";
 
 export default async function createSubscriptionController(
   req: Request,
@@ -12,6 +13,28 @@ export default async function createSubscriptionController(
     subscriptionInBody: req.body.subscription,
   });
   try {
+    const user = await prisma.user.findUnique({
+      where: {
+        id: req.user?.id,
+      },
+      select: {
+        subscriptions: {
+          where: {
+            endDate: {
+              gte: new Date().toISOString(),
+            },
+          },
+        },
+      },
+    });
+
+    console.log("Create Sub Apiiiiiiiiiiiiiiiiiiiiii");
+    if (parseInt(toString(user?.subscriptions?.length || 0)) >= 3) {
+      res.statusCode = 299;
+      return res.json({
+        error: "You can't have more than 3 active subscriptions.",
+      });
+    }
     const plan = await prisma.plan.findUnique({
       where: {
         id: req.body.subscription.planId,

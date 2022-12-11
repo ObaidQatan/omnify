@@ -9,6 +9,11 @@ export default async function bikesController(req: Request, res: Response) {
     const bikes = await prisma.bike.findMany({
       include: {
         subscriptions: {
+          where: {
+            endDate: {
+              gte: new Date().toISOString(),
+            },
+          },
           include: {
             bike: true,
             plan: true,
