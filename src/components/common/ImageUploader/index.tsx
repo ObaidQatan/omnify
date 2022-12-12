@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Burger } from "@mantine/core";
 import { camelCase, startCase } from "lodash";
 import useTranslation from "next-translate/useTranslation";
@@ -25,7 +26,11 @@ const ImageUploader = ({
         className ? className : ""
       }`}
     >
-      <div className="wrapper flex flex-col items-center p-5 bg-white rounded-md shadow-lg shadow-black h-full max-h-[500px] w-full max-w-[800px]">
+      <motion.div
+        initial={{ scale: 0.5 }}
+        animate={{ scale: 1 }}
+        className="wrapper flex flex-col items-center p-5 bg-white rounded-md shadow-lg shadow-black h-full max-h-[500px] w-full max-w-[800px]"
+      >
         <div className="closer flex justify-start items-center w-full pb-5">
           <Burger
             opened={true}
@@ -79,7 +84,7 @@ const ImageUploader = ({
             </button>
           )}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

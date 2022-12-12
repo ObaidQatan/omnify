@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { camelCase, startCase } from "lodash";
 import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
@@ -21,7 +22,9 @@ const Menu = ({
   if (!opened) return null;
 
   return (
-    <div
+    <motion.div
+      initial={{ scale: 0.5 }}
+      animate={{ scale: 1 }}
       className={`menu flex flex-col items-center w-fit justify-start bg-white text-gray-500 rounded-md p-5 ${
         className && className
       }`}
@@ -71,7 +74,7 @@ const Menu = ({
             </div>
           )
       )}
-    </div>
+    </motion.div>
   );
 };
 

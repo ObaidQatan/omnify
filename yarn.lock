@@ -2452,25 +2452,16 @@
   "resolved" "https://registry.npmjs.org/fraction.js/-/fraction.js-4.2.0.tgz"
   "version" "4.2.0"
 
-"framer-motion@^7.6.18":
-  "integrity" "sha512-+njLqmMZBqf+GpIMRkuC7s9A9KrvOfMXm+B/yscKG+/SKAA+qdQFl/3ACU2tAhN7UFau1HuB/vBa/jrWBKVvDg=="
-  "resolved" "https://registry.npmjs.org/framer-motion/-/framer-motion-7.6.18.tgz"
-  "version" "7.6.18"
+"framer-motion@^7.7.1":
+  "integrity" "sha512-btSUZOiISMZhx7GLgN3aL2tLS/hcGK0+pi6Ku+zAF51ypNWcffXFm4zv97SD6U9Ln9D0E3iAc01SlRwIeI0XXA=="
+  "resolved" "https://registry.npmjs.org/framer-motion/-/framer-motion-7.7.1.tgz"
+  "version" "7.7.1"
   dependencies:
     "@motionone/dom" "10.13.1"
-    "framesync" "6.1.2"
     "hey-listen" "^1.0.8"
-    "style-value-types" "5.1.2"
     "tslib" "2.4.0"
   optionalDependencies:
     "@emotion/is-prop-valid" "^0.8.2"
-
-"framesync@6.1.2":
-  "integrity" "sha512-jBTqhX6KaQVDyus8muwZbBeGGP0XgujBRbQ7gM7BRdS3CadCZIHiawyzYLnafYcvZIh5j8WE7cxZKFn7dXhu9g=="
-  "resolved" "https://registry.npmjs.org/framesync/-/framesync-6.1.2.tgz"
-  "version" "6.1.2"
-  dependencies:
-    "tslib" "2.4.0"
 
 "fs-constants@^1.0.0":
   "integrity" "sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow=="
@@ -4368,14 +4359,6 @@
   "version" "0.3.0"
   dependencies:
     "inline-style-parser" "0.1.1"
-
-"style-value-types@5.1.2":
-  "integrity" "sha512-Vs9fNreYF9j6W2VvuDTP7kepALi7sk0xtk2Tu8Yxi9UoajJdEVpNpCov0HsLTqXvNGKX+Uv09pkozVITi1jf3Q=="
-  "resolved" "https://registry.npmjs.org/style-value-types/-/style-value-types-5.1.2.tgz"
-  "version" "5.1.2"
-  dependencies:
-    "hey-listen" "^1.0.8"
-    "tslib" "2.4.0"
 
 "styled-jsx@5.0.7":
   "integrity" "sha512-b3sUzamS086YLRuvnaDigdAewz1/EFYlHpYBP5mZovKEdQQOIIYq8lApylub3HHZ6xFjV051kkGU7cudJmrXEA=="

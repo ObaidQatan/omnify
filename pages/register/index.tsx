@@ -266,7 +266,7 @@ const Home: NextPage = () => {
             {startCase(tCommon(camelCase("register")))}
           </button>
 
-          <Link href={"/"}>
+          <Link href={"/login"}>
             <a className="text-red-500 font-bold border-b border-dashed border-red-300 font-[Monteserrat] text-sm tracking-wider p-2 rounded-md hover:bg-red-500 hover:bg-opacity-5">
               {capitalize(
                 startCase(tCommon(camelCase("already have an account")))

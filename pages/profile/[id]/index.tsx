@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
-import { Golf, Logout } from "tabler-icons-react";
+import { Golf, Home, Logout } from "tabler-icons-react";
 import { loadingState } from "../../../src/components/common/Loading";
 import BikeImage from "../../../src/components/gallery/BikeImage";
 import { User } from "../../../src/types/User";
@@ -93,6 +93,14 @@ const Profile = ({
         </button>
 
         <button
+          className="home-btn w-full flex items-center justify-center bg-red-500 hover:bg-red-600 py-5 mb-2 text-white font-[Nunito] rounded-md shadow shadow-gray-400"
+          onClick={() => router.push("/")}
+        >
+          <Home strokeWidth={1.5} />
+          <h3 className="px-5">{startCase(tCommon(camelCase("home")))}</h3>
+        </button>
+
+        <button
           className="logout-btn w-full flex items-center justify-center bg-white hover:bg-slate-100 py-5 text-red-500 font-[Nunito] font-bold rounded-md shadow shadow-gray-400"
           onClick={() => router.push("/logout")}
         >
@@ -120,7 +128,7 @@ const Profile = ({
               { maxWidth: 768, cols: 1 },
               { maxWidth: 1024, cols: 2 },
             ]}
-            className="subs-grid w-full h-full overflow-y-auto"
+            className="subs-grid w-full h-full overflow-y-auto py-2"
           >
             {user?.subscriptions?.map((sub) => (
               <div

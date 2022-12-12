@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
+import { Home } from "tabler-icons-react";
 import { User } from "../../../types/User";
 import { loadingState } from "../Loading";
 import Menu from "./Menu";
@@ -60,7 +61,14 @@ const Header = (props: Props) => {
           </svg>
         </button>
       </div>
-
+      <div className="flex items-center justify-center">
+        <Home
+          size={35}
+          color="#00000080"
+          className="home-btn p-2 rounded-lg bg-[#00000020] cursor-pointer"
+          onClick={() => router.push("/")}
+        />
+      </div>
       {/** Build avatar and menu show up on hover */}
       {props.user ? (
         <div className="avatar-container relative flex flex-1 items-center justify-end h-full p-5">
