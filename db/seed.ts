@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 async function main() {
   // seed here
   // remove all users
-  await prisma.user.deleteMany();
+  // await prisma.user.deleteMany();
   // create admin user
   await prisma.user.create({
     data: {

@@ -24,7 +24,7 @@ const Header = (props: Props) => {
     setLoading(true);
     props.user &&
       fetch(
-        `https://xjhrfldvdasjxazqxgox.supabase.co/storage/v1/object/public/users-data/public/avatars/${props.user?.id}.png`
+        `https://gvlwjcclpjcjacazvfic.supabase.co/storage/v1/object/public/users-data/public/avatars/${props.user?.id}.png`
       )
         .then((res) => {
           console.log("Avatar file....", { res });

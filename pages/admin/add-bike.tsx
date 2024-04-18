@@ -90,7 +90,7 @@ const AddBike = (props: Props) => {
 
           // TODO: create bike
           createBike(
-            `https://xjhrfldvdasjxazqxgox.supabase.co/storage/v1/object/public/bikes-data/public/images/${id}.png`
+            `https://gvlwjcclpjcjacazvfic.supabase.co/storage/v1/object/public/bikes-data/public/images/${id}.png`
           );
         });
     } else {

@@ -29,7 +29,7 @@ const Profile = ({
   useEffect(() => {
     setLoading(true);
     fetch(
-      `https://xjhrfldvdasjxazqxgox.supabase.co/storage/v1/object/public/users-data/public/avatars/${user.id}.png`
+      `https://gvlwjcclpjcjacazvfic.supabase.co/storage/v1/object/public/users-data/public/avatars/${user.id}.png`
     )
       .then((res) => {
         console.log("Avatar file....", { res });
